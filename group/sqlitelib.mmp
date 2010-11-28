@@ -1,0 +1,34 @@
+/*
+============================================================================
+ Name		: sqlitelib.mmp
+ Author	  : xiaoguang.huang
+ Copyright   : Your copyright notice
+ Description : This is the project specification file for sqlitelib.
+============================================================================
+*/
+
+TARGET		  sqlitelib.lib
+TARGETTYPE	  lib
+UID			 0
+
+USERINCLUDE	 ..\inc
+USERINCLUDE	 ..\src
+
+SYSTEMINCLUDE   \epoc32\include
+SYSTEMINCLUDE                           \Epoc32\include\stdapis 
+
+SOURCEPATH	  ..\src
+SOURCE		  sqlitelib.cpp alter.cpp analyze.cpp attach.cpp auth.cpp btmutex.cpp btree.cpp build.cpp callback.cpp complete.cpp date.cpp delete.cpp expr.cpp func.cpp hash.cpp helper.cpp insert.cpp journal.cpp legacy.cpp loadext.cpp main.cpp malloc.cpp mem1.cpp mem2.cpp mem3.cpp mem4.cpp mutex.cpp opcodes.cpp os.cpp os_symbian.cpp pager.cpp parse.cpp pragma.cpp prepare.cpp printf.cpp random.cpp select.cpp table.cpp tokenize.cpp trigger.cpp update.cpp utf.cpp util.cpp vacuum.cpp vdbe.cpp vdbeapi.cpp vdbeaux.cpp vdbeblob.cpp vdbefifo.cpp vdbemem.cpp vtab.cpp where.cpp
+
+
+LIBRARY                       bafl.lib 
+LIBRARY                                 euser.lib 
+LIBRARY                                 charconv.lib 
+LIBRARY                                 efsrv.lib 
+LIBRARY                                 libc.lib 
+macro                                   OS_SYMBIAN 
+
+
+#ifdef ENABLE_ABIV2_MODE
+DEBUGGABLE_UDEBONLY
+#endif
